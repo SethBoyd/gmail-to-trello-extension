@@ -67,7 +67,7 @@ setTimeout(function() {
         getGmailObject();
         app.initialize();
     });
-}, 1000);
+}, 100);
 
 /*
  *  UNIT TESTS GOES HERE. AFFECT TO EVERY PAGES
