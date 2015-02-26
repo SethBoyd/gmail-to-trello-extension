@@ -14,7 +14,6 @@
 /**
  * Turn on/off debug mode with logging
  */
-alert('loaded');
 var logEnabled = true;
 
 /**
