@@ -94,6 +94,10 @@ GmailToTrello.App.prototype.bindEvents = function() {
 
     });
 
+    window.addEventListener('hashchange', function () {
+        self.gmailView.detect();
+    });
+
 };
 
 GmailToTrello.App.prototype.initialize = function() {
