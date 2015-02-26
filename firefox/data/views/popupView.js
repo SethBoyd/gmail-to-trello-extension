@@ -21,26 +21,26 @@ GmailToTrello.PopupView.prototype.init = function() {
     log('GTT::view::initializing...');
 
     //check if already init
-    if (this.detectPopup()) 
+    if (this.detectPopup())
         return true;
 
     // inject a button & a popup
 
-    var strAddCardButtonHtml = "\n\
-<div id=\"gttButton\" class=\"T-I J-J5-Ji ar7 nf T-I-ax7 L3\" data-tooltip=\"Add this card to Trello\">\n\
-    <div aria-haspopup=\"true\" role=\"button\" class=\"J-J5-Ji W6eDmd L3 J-Zh-I J-J5-Ji Bq L3\" tabindex=\"0\">\n\
-        <img class=\"f tk3N6e-I-J3\" src=\"images/icon-13.jpg\">\n\
-        <span class=\"button-text\">Add card</span>\n\
-    </div>\n\
-</div>";
+    var strAddCardButtonHtml = '\
+<div id="gttButton" class="T-I J-J5-Ji ar7 nf T-I-ax7 L3" data-tooltip="Add this card to Trello"> \
+    <div aria-haspopup="true" role="button" class="J-J5-Ji W6eDmd L3 J-Zh-I J-J5-Ji Bq L3" tabindex="0"> \
+        <img class="f tk3N6e-I-J3" src="' + self.options.urlprefix + 'images/icon-13.jpg"> \
+        <span class="button-text">Add card</span> \
+    </div> \
+</div>';
 
-    /* Sample data:              
+    /* Sample data:
      <div id="gttButton" class="T-I J-J5-Ji ar7 nf T-I-ax7 L3" data-tooltip="Add this card to Trello">
      <div aria-haspopup="true" role="button" class="J-J5-Ji W6eDmd L3 J-Zh-I J-J5-Ji Bq L3" tabindex="0">
      <img class="f tk3N6e-I-J3" src="chrome-extension://dmphibjhlehaljceeocbdeoaedkknipg/images/icon-13.jpg">
      <span class="button-text">Add card</span>
      </div>
-     </div>              
+     </div>
      */
 
     var strPopupHtml = '\
@@ -51,7 +51,7 @@ GmailToTrello.PopupView.prototype.init = function() {
 		<div class="userinfo"><span class="item">&nbsp;&nbsp;GMail to Trello</span> \
 		</div> \
         <span class="item">|</span> \
-        <a class="item" href="https://trello.com/b/CGU9BYgd/gmail-to-trello-development" target="_blank"><img src="images/new_icon.gif" /> Features/Bugs</a> \
+        <a class="item" href="https://github.com/SethBoyd/gmail-to-trello-extension/issues" target="_blank"><img src="' + self.options.urlprefix + 'images/new_icon.gif" /> Features/Bugs</a> \
    		<a class="item" href="javascript:void(0)" id="close-button">[x] Close</a> 	\
 	</div> \
 	<div class="popupMsg">Loading...</div> \
@@ -103,7 +103,7 @@ GmailToTrello.PopupView.prototype.init = function() {
 
     //log('resizing...');
     var left = this.$addCardButton.position().left; //related to its parent
-    var minLeft = parentWidth - this.MIN_WIDTH + 1; // 
+    var minLeft = parentWidth - this.MIN_WIDTH + 1; //
     if (left > minLeft)
         left = minLeft;
 
@@ -458,7 +458,7 @@ GmailToTrello.PopupView.prototype.bindEventHiddenEmails = function() {
         self.waitingHiddenThreadElement = this;
 
         if (!self.waitingHiddenThread) {
-            //loading, give it a change 
+            //loading, give it a change
             self.waitingHiddenThread = true;
             self.waitingHiddenThreadProcId = setInterval(function() {
                 log('waitingHiddenThread. round ' + self.waitingHiddenThreadRetries);
@@ -478,7 +478,7 @@ GmailToTrello.PopupView.prototype.bindEventHiddenEmails = function() {
     //log(this.classList);
     //    if (!self.dataDirty)
     //        self.parseData();
-    //});    
+    //});
 };
 
 GmailToTrello.PopupView.prototype.validateData = function() {

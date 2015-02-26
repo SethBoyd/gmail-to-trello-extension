@@ -1,4 +1,5 @@
 var pageMod = require("sdk/page-mod");
+var self = require("sdk/self");
 
 pageMod.PageMod({
     include: "https://mail.google.com/mail*",
@@ -18,6 +19,9 @@ pageMod.PageMod({
         "./app.js",
         "./content-script.js",
     ],
+    contentScriptOptions: {
+        urlprefix: self.data.url("REPLACEME").replace("REPLACEME", '')
+    },
     contentStyleFile: [
         "./style.css",
         "./lib/jquery.datetimepicker.css"
