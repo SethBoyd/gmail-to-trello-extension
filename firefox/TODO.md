@@ -3,6 +3,7 @@
 - [done] Detect most visible thread on screen
 - [done] refactor
 - [done] Check valid gmail's event (email thread mode)
+- Migrate to using gmail API
 - attachments
 - add due date
 - validate textbox data (empty state)
