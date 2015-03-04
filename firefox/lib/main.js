@@ -6,7 +6,7 @@ pageMod.PageMod({
     contentScriptWhen: 'end',
     contentScriptFile: [
         "./lib/jquery.min.js",
-        "./lib/jquery-ui-1.10.3.custom.min.js",
+        "./lib/jquery-ui.min.js",
         "./lib/jquery.datetimepicker.js",
         "./lib/trello.min.js",
         "./lib/date.js",
