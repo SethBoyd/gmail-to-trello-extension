@@ -166,6 +166,8 @@ GmailToTrello.GmailView.prototype.parseData = function() {
 
     // email body
     var $emailBody = jQuery(this.selectors.emailBody, $visibleMail);
+    data.body = $emailBody.text();
+    /*
     data.body = "";
     var tmpText;
     var newLinesRegex = /\n/g;
@@ -175,6 +177,7 @@ GmailToTrello.GmailView.prototype.parseData = function() {
         if (tmpText.match(nonWhiteSpaceRegex))
             data.body += tmpText + "\n\n";
     });
+    */
 
     // timestamp
     var $time = jQuery(this.selectors.timestamp, $visibleMail);
